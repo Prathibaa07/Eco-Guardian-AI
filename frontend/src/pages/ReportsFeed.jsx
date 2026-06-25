@@ -51,17 +51,7 @@ const ReportsFeed = () => {
     fetchReports();
   }, []);
 
-  const handleDelete = async (reportId) => {
-    if (!window.confirm("Are you sure you want to delete this report?")) return;
-    
-    try {
-      await axios.delete(`/api/reports/${reportId}?user_id=${user.id}`);
-      setReports((prev) => prev.filter(r => r.id !== reportId));
-    } catch (err) {
-      console.error("Failed to delete report:", err);
-      alert("Failed to delete report. You might not have permission.");
-    }
-  };
+
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -107,20 +97,7 @@ const ReportsFeed = () => {
               className="relative glass-panel glass-panel-hover flex flex-col h-full overflow-hidden"
             >
               
-              {/* Delete Button */}
-              {user && user.id === report.user_id && (
-                <button 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    handleDelete(report.id);
-                  }}
-                  title="Delete Report"
-                  className="absolute top-3 right-3 bg-slate-900/80 hover:bg-red-500/90 text-slate-300 hover:text-white p-1.5 rounded-md backdrop-blur-md shadow-lg transition-colors z-20 border border-slate-700/50"
-                >
-                  <Trash2 className="w-4 h-4" />
-                </button>
-              )}
+
               
               {/* Image Header */}
               {report.image_url && (
