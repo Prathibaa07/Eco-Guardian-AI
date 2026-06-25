@@ -1,6 +1,7 @@
 services:
   - type: web
     name: eco-guardian-ai
+    plan: free
     env: python
     buildCommand: "./build.sh"
     startCommand: "cd backend && gunicorn app:app"
