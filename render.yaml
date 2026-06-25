@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: eco-guardian-ai
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "cd backend && gunicorn app:app"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+      - key: SUPABASE_URL
+        value: "" # Fill this in on Render Dashboard if you want permanent data storage
+      - key: SUPABASE_KEY
+        value: "" # Fill this in on Render Dashboard if you want permanent data storage
+      - key: GEMINI_API_KEY
+        value: "" # Fill this in on Render Dashboard if you have a Gemini API key
