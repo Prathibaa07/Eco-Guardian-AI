@@ -14,7 +14,7 @@ cd ..
 
 echo "Installing backend dependencies..."
 cd backend
-python -m pip install --upgrade pip
-pip install -r requirements.txt
+python -m pip install uv
+uv pip install --system -r requirements.txt
 
 echo "Build complete."
