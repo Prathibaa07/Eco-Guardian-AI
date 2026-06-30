@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/Eco-Guardian-AI/',
   plugins: [react()],
   // Dev server: proxy /api → Flask on :5000
   server: {
