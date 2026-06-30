@@ -8,6 +8,36 @@ It also features a full-screen interactive hazard map, a sustainability dashboar
 
 ---
 
+## 📁 Project Structure
+
+```text
+Eco Guardian AI/
+├── backend/                   # Python Flask Server & AI Logic
+│   ├── app.py                 # Main application entry point & API routes
+│   ├── database.py            # SQLite/Supabase models and queries
+│   ├── ibm_ai.py              # AI vision and analysis logic (Watsonx/Gemini)
+│   ├── test_backend.py        # Unit and integration tests
+│   ├── requirements.txt       # Python dependencies
+│   ├── uploads/               # Local storage for user-submitted images
+│   └── .env                   # API keys and database configuration
+├── frontend/                  # React + Vite Frontend Application
+│   ├── src/                   # Source code
+│   │   ├── components/        # Reusable UI components (Navbar, ChatBot, etc.)
+│   │   ├── pages/             # Route-level views (Dashboard, Map, Reports)
+│   │   ├── context/           # React context providers (AuthContext)
+│   │   ├── utils/             # Helper functions and API clients
+│   │   ├── App.jsx            # Main React component and Router setup
+│   │   ├── index.css          # Global Tailwind CSS styles
+│   │   └── main.jsx           # React DOM rendering entry point
+│   ├── package.json           # Node.js dependencies and scripts
+│   └── vite.config.js         # Vite bundler configuration
+├── Dockerfile                 # Docker configuration for containerization
+├── build.sh                   # Deployment build script
+└── README.md                  # Project documentation
+```
+
+---
+
 ## 🛠️ Technology Stack
 
 ### Frontend
